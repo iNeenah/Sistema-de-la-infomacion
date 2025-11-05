@@ -483,15 +483,108 @@ Plan de Desarrollo */}
           {/* Diagrama de Gantt */}
           <div className="mb-12">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">2.6.1. Diagrama de Gantt</h3>
-            <div className="bg-white p-6 rounded-lg border border-gray-200">
-              <div className="relative w-full h-96 overflow-hidden rounded-lg">
-                <iframe 
-                  src="/assets/gantt_visual_remera.html" 
-                  className="w-full h-full border-0 rounded-lg"
-                  title="Diagrama de Gantt - Desarrollo de Remera"
-                  loading="lazy"
-                  sandbox="allow-scripts allow-same-origin"
-                />
+            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Desarrollo de Remera T-003</h4>
+                <p className="text-gray-600">Cronograma de actividades para el desarrollo del producto estrella</p>
+              </div>
+              
+              {/* Gantt Chart Recreado */}
+              <div className="overflow-x-auto">
+                <div className="min-w-full">
+                  {/* Header */}
+                  <div className="grid grid-cols-8 gap-2 mb-4 text-sm font-semibold text-gray-700">
+                    <div className="col-span-2 p-3 bg-gray-100 rounded">Actividad</div>
+                    <div className="p-3 bg-blue-100 rounded text-center">Sem 1</div>
+                    <div className="p-3 bg-blue-100 rounded text-center">Sem 2</div>
+                    <div className="p-3 bg-blue-100 rounded text-center">Sem 3</div>
+                    <div className="p-3 bg-blue-100 rounded text-center">Sem 4</div>
+                    <div className="p-3 bg-blue-100 rounded text-center">Sem 5</div>
+                    <div className="p-3 bg-blue-100 rounded text-center">Sem 6</div>
+                  </div>
+                  
+                  {/* Gantt Rows */}
+                  <div className="space-y-2">
+                    {/* Investigación de Mercado */}
+                    <div className="grid grid-cols-8 gap-2 text-sm">
+                      <div className="col-span-2 p-3 bg-gray-50 rounded font-medium">Investigación de Mercado</div>
+                      <div className="p-3 bg-blue-500 rounded text-white text-center">●</div>
+                      <div className="p-3 bg-blue-500 rounded text-white text-center">●</div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                    </div>
+                    
+                    {/* Diseño Conceptual */}
+                    <div className="grid grid-cols-8 gap-2 text-sm">
+                      <div className="col-span-2 p-3 bg-gray-50 rounded font-medium">Diseño Conceptual</div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-green-500 rounded text-white text-center">●</div>
+                      <div className="p-3 bg-green-500 rounded text-white text-center">●</div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                    </div>
+                    
+                    {/* Prototipado */}
+                    <div className="grid grid-cols-8 gap-2 text-sm">
+                      <div className="col-span-2 p-3 bg-gray-50 rounded font-medium">Prototipado</div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-yellow-500 rounded text-white text-center">●</div>
+                      <div className="p-3 bg-yellow-500 rounded text-white text-center">●</div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                    </div>
+                    
+                    {/* Testing y Validación */}
+                    <div className="grid grid-cols-8 gap-2 text-sm">
+                      <div className="col-span-2 p-3 bg-gray-50 rounded font-medium">Testing y Validación</div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-purple-500 rounded text-white text-center">●</div>
+                      <div className="p-3 bg-purple-500 rounded text-white text-center">●</div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                    </div>
+                    
+                    {/* Producción */}
+                    <div className="grid grid-cols-8 gap-2 text-sm">
+                      <div className="col-span-2 p-3 bg-gray-50 rounded font-medium">Producción</div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-gray-100 rounded"></div>
+                      <div className="p-3 bg-red-500 rounded text-white text-center">●</div>
+                      <div className="p-3 bg-red-500 rounded text-white text-center">●</div>
+                    </div>
+                  </div>
+                  
+                  {/* Leyenda */}
+                  <div className="mt-6 flex flex-wrap gap-4 text-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-blue-500 rounded"></div>
+                      <span>Investigación</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-green-500 rounded"></div>
+                      <span>Diseño</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-yellow-500 rounded"></div>
+                      <span>Desarrollo</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-purple-500 rounded"></div>
+                      <span>Testing</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-red-500 rounded"></div>
+                      <span>Producción</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
