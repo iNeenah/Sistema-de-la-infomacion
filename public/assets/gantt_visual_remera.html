@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Gantt - Remera T-003</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .gantt-container {
+            padding: 40px;
+            overflow-x: auto;
+        }
+        
+        .gantt-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid;
+            transition: transform 0.2s;
+        }
+        
+        .gantt-row:hover {
+            transform: translateX(5px);
+        }
+        
+        .gantt-row.phase1 { border-left-color: #4ecdc4; }
+        .gantt-row.phase2 { border-left-color: #45b7d1; }
+        .gantt-row.phase3 { border-left-color: #f9ca24; }
+        .gantt-row.phase4 { border-left-color: #f0932b; }
+        .gantt-row.phase5 { border-left-color: #eb4d4b; }
+        .gantt-row.milestone { border-left-color: #6c5ce7; }
+        .gantt-row.critical { border-left-color: #e17055; }
+        .gantt-row.done { border-left-color: #00b894; }
+        
+        .task-info {
+            flex: 0 0 250px;
+            margin-right: 20px;
+        }
+        
+        .task-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: #2d3436;
+        }
+        
+        .task-details {
+            font-size: 0.9em;
+            color: #636e72;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .status-completed { background: #00b894; color: white; }
+        .status-active { background: #0984e3; color: white; }
+        .status-milestone { background: #a29bfe; color: white; }
+        .status-critical { background: #e17055; color: white; }
+        
+        .timeline {
+            flex: 1;
+            position: relative;
+            height: 40px;
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .timeline-bar {
+            position: absolute;
+            height: 100%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8em;
+            transition: all 0.3s;
+        }
+        
+        .timeline-bar:hover {
+            filter: brightness(1.1);
+        }
+        
+        .date-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: #636e72;
+            padding-left: 270px;
+        }
+        
+        .phase-title {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 20px;
+            margin: 30px 0 10px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        
+        .summary {
+            background: #f1f3f5;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+        
+        .summary h3 {
+            color: #2d3436;
+            margin-bottom: 15px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .summary-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .summary-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Plan de Lanzamiento: Remera Modelo T-003</h1>
+            <p>Diagrama de Gantt Interactivo | Período: 6-31 Octubre 2025</p>
+        </div>
+        
+        <div class="gantt-container">
+            <div class="phase-title">📐 FASE 1: CONCEPTO Y DISEÑO (Semana 1)</div>
+            
+            <div class="gantt-row phase1 done">
+                <div class="task-info">
+                    <div class="task-title">
+                        Brainstorming y Tendencias
+                        <span class="status-badge status-completed">✅ Completada</span>
+                    </div>
+                    <div class="task-details">6 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 0%; width: 4%; background: #00b894;">6 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase1 active">
+                <div class="task-info">
+                    <div class="task-title">
+                        Bocetado y Diseño
+                        <span class="status-badge status-active">🔄 Activa</span>
+                    </div>
+                    <div class="task-details">7-8 Oct 2025 | 2 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 4%; width: 8%; background: #0984e3;">7-8 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase1 milestone">
+                <div class="task-info">
+                    <div class="task-title">
+                        Reunión de Decisión
+                        <span class="status-badge status-milestone">⭐ Hito</span>
+                    </div>
+                    <div class="task-details">9 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 12%; width: 4%; background: #a29bfe;">9 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase1">
+                <div class="task-info">
+                    <div class="task-title">Arte Final y Preparación</div>
+                    <div class="task-details">10-11 Oct 2025 | 2 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 16%; width: 8%; background: #4ecdc4;">10-11 Oct</div>
+                </div>
+            </div>
+            
+            <div class="phase-title">🏭 FASE 2: PRODUCCIÓN Y OPERACIONES (Semana 2)</div>
+            
+            <div class="gantt-row phase2">
+                <div class="task-info">
+                    <div class="task-title">Envío arte final al proveedor</div>
+                    <div class="task-details">13 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 28%; width: 4%; background: #45b7d1;">13 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase2">
+                <div class="task-info">
+                    <div class="task-title">Espera y recepción muestra física</div>
+                    <div class="task-details">14-16 Oct 2025 | 3 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 32%; width: 12%; background: #45b7d1;">14-16 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase2">
+                <div class="task-info">
+                    <div class="task-title">Revisión calidad de muestra</div>
+                    <div class="task-details">17 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 44%; width: 4%; background: #45b7d1;">17 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase2">
+                <div class="task-info">
+                    <div class="task-title">Confirma orden producción y pago</div>
+                    <div class="task-details">18 Oct 2025 | 0.5 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 48%; width: 2%; background: #45b7d1;">18 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase2">
+                <div class="task-info">
+                    <div class="task-title">Alta SKU y precio en SIA</div>
+                    <div class="task-details">18 Oct 2025 | 0.5 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 50%; width: 2%; background: #45b7d1;">18 Oct</div>
+                </div>
+            </div>
+            
+            <div class="phase-title">📢 FASE 3: PRELANZAMIENTO - MARKETING (Semana 3)</div>
+            
+            <div class="gantt-row phase3">
+                <div class="task-info">
+                    <div class="task-title">Recepción stock, conteo y verificación</div>
+                    <div class="task-details">20 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 56%; width: 4%; background: #f9ca24;">20 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase3">
+                <div class="task-info">
+                    <div class="task-title">Carga de stock en SIA</div>
+                    <div class="task-details">21 Oct 2025 | 0.5 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 60%; width: 2%; background: #f9ca24;">21 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase3">
+                <div class="task-info">
+                    <div class="task-title">Sesión fotos y grabación reels</div>
+                    <div class="task-details">21-22 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 60%; width: 4%; background: #f9ca24;">21-22 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase3">
+                <div class="task-info">
+                    <div class="task-title">Preparación campaña "hype"</div>
+                    <div class="task-details">23 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 64%; width: 4%; background: #f9ca24;">23 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase3">
+                <div class="task-info">
+                    <div class="task-title">Publicación de teasers</div>
+                    <div class="task-details">24 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 68%; width: 4%; background: #f9ca24;">24 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase3">
+                <div class="task-info">
+                    <div class="task-title">Ejecución campaña "hype"</div>
+                    <div class="task-details">25-26 Oct 2025 | 2 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 72%; width: 8%; background: #f9ca24;">25-26 Oct</div>
+                </div>
+            </div>
+            
+            <div class="phase-title">🎯 FASE 4: LANZAMIENTO (Semana 4)</div>
+            
+            <div class="gantt-row phase4 milestone">
+                <div class="task-info">
+                    <div class="task-title">
+                        Post oficial IG y Twitter
+                        <span class="status-badge status-milestone">⭐ HITO PRINCIPAL</span>
+                    </div>
+                    <div class="task-details">27 Oct 2025 | 0.5 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 84%; width: 2%; background: #a29bfe;">27 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase4">
+                <div class="task-info">
+                    <div class="task-title">Gestión ventas en DMs</div>
+                    <div class="task-details">27-28 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 84%; width: 4%; background: #f0932b;">27-28 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase4">
+                <div class="task-info">
+                    <div class="task-title">Registro ventas en SIA (en vivo)</div>
+                    <div class="task-details">27-29 Oct 2025 | 2 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 84%; width: 8%; background: #f0932b;">27-29 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase4">
+                <div class="task-info">
+                    <div class="task-title">Soporte y gestión comunidad</div>
+                    <div class="task-details">27-29 Oct 2025 | 2 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 84%; width: 8%; background: #f0932b;">27-29 Oct</div>
+                </div>
+            </div>
+            
+            <div class="phase-title">📦 FASE 5: OPERACIÓN Y POST-LANZAMIENTO (Semana 4)</div>
+            
+            <div class="gantt-row phase5">
+                <div class="task-info">
+                    <div class="task-title">Preparación y packaging pedidos</div>
+                    <div class="task-details">29 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 92%; width: 4%; background: #eb4d4b;">29 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase5">
+                <div class="task-info">
+                    <div class="task-title">Despacho en correo</div>
+                    <div class="task-details">30 Oct 2025 | 1 día</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 96%; width: 4%; background: #eb4d4b;">30 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase5">
+                <div class="task-info">
+                    <div class="task-title">Cierre ventas, atención cliente</div>
+                    <div class="task-details">31 Oct 2025 | 0.5 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 98%; width: 2%; background: #eb4d4b;">31 Oct</div>
+                </div>
+            </div>
+            
+            <div class="gantt-row phase5 milestone">
+                <div class="task-info">
+                    <div class="task-title">
+                        Reunión retrospectiva equipo
+                        <span class="status-badge status-milestone">⭐ HITO FINAL</span>
+                    </div>
+                    <div class="task-details">31 Oct 2025 | 0.5 días</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar" style="left: 98%; width: 2%; background: #a29bfe;">31 Oct</div>
+                </div>
+            </div>
+            
+            <div class="date-labels">
+                <span>6 Oct</span>
+                <span>13 Oct</span>
+                <span>20 Oct</span>
+                <span>27 Oct</span>
+                <span>31 Oct</span>
+            </div>
+        </div>
+        
+        <div class="summary">
+            <h3>📊 RESUMEN EJECUTIVO</h3>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-number">23</div>
+                    <div>Total de Tareas</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">26</div>
+                    <div>Días Laborables</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">5</div>
+                    <div>Fases del Proyecto</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">3</div>
+                    <div>Hitos Principales</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
