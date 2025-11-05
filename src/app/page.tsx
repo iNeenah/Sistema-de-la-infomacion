@@ -481,107 +481,219 @@ Plan de Desarrollo */}
           </div>
 
           {/* Diagrama de Gantt */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">2.6.1. Diagrama de Gantt</h3>
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Desarrollo de Remera T-003</h4>
-                <p className="text-gray-600">Cronograma de actividades para el desarrollo del producto estrella</p>
+          <div className="mb-16">
+            <h3 className="text-3xl font-semibold text-gray-900 mb-8 text-center">2.6.1. Diagrama de Gantt</h3>
+            
+            {/* Introducción al Gantt */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-xl mb-8 border border-blue-200">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-2xl font-semibold text-gray-900 mb-3">Proyecto: Desarrollo de Remera "Terminal Hacker" (T-003)</h4>
+                  <p className="text-gray-700 text-lg mb-4">
+                    Cronograma detallado para el desarrollo del producto estrella de HackLayer, desde la conceptualización 
+                    hasta la producción masiva. Este diagrama muestra la planificación temporal de 6 semanas para lanzar 
+                    la primera remera con diseño exclusivo orientado a la comunidad de ciberseguridad.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <strong className="text-gray-900">Duración Total:</strong> 6 semanas (42 días)
+                    </div>
+                    <div>
+                      <strong className="text-gray-900">Equipo:</strong> 2 fundadores + 1 community manager
+                    </div>
+                    <div>
+                      <strong className="text-gray-900">Presupuesto:</strong> $50,000 ARS inicial
+                    </div>
+                    <div>
+                      <strong className="text-gray-900">Meta:</strong> 100 unidades primera producción
+                    </div>
+                  </div>
+                </div>
               </div>
-              
-              {/* Gantt Chart Recreado */}
+            </div>
+
+            {/* Gantt Chart Mejorado */}
+            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
               <div className="overflow-x-auto">
-                <div className="min-w-full">
-                  {/* Header */}
-                  <div className="grid grid-cols-8 gap-2 mb-4 text-sm font-semibold text-gray-700">
-                    <div className="col-span-2 p-3 bg-gray-100 rounded">Actividad</div>
-                    <div className="p-3 bg-blue-100 rounded text-center">Sem 1</div>
-                    <div className="p-3 bg-blue-100 rounded text-center">Sem 2</div>
-                    <div className="p-3 bg-blue-100 rounded text-center">Sem 3</div>
-                    <div className="p-3 bg-blue-100 rounded text-center">Sem 4</div>
-                    <div className="p-3 bg-blue-100 rounded text-center">Sem 5</div>
-                    <div className="p-3 bg-blue-100 rounded text-center">Sem 6</div>
-                  </div>
-                  
-                  {/* Gantt Rows */}
-                  <div className="space-y-2">
-                    {/* Investigación de Mercado */}
-                    <div className="grid grid-cols-8 gap-2 text-sm">
-                      <div className="col-span-2 p-3 bg-gray-50 rounded font-medium">Investigación de Mercado</div>
-                      <div className="p-3 bg-blue-500 rounded text-white text-center">●</div>
-                      <div className="p-3 bg-blue-500 rounded text-white text-center">●</div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
+                <div className="min-w-[800px]">
+                  {/* Header con fechas */}
+                  <div className="grid grid-cols-9 gap-2 mb-6">
+                    <div className="col-span-2 p-4 bg-gray-800 text-white rounded-lg font-semibold">
+                      Actividades del Proyecto
                     </div>
-                    
-                    {/* Diseño Conceptual */}
-                    <div className="grid grid-cols-8 gap-2 text-sm">
-                      <div className="col-span-2 p-3 bg-gray-50 rounded font-medium">Diseño Conceptual</div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-green-500 rounded text-white text-center">●</div>
-                      <div className="p-3 bg-green-500 rounded text-white text-center">●</div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
+                    <div className="p-3 bg-blue-100 rounded-lg text-center font-medium">
+                      <div className="text-xs text-gray-600">Semana 1</div>
+                      <div className="text-sm font-semibold">Días 1-7</div>
                     </div>
-                    
-                    {/* Prototipado */}
-                    <div className="grid grid-cols-8 gap-2 text-sm">
-                      <div className="col-span-2 p-3 bg-gray-50 rounded font-medium">Prototipado</div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-yellow-500 rounded text-white text-center">●</div>
-                      <div className="p-3 bg-yellow-500 rounded text-white text-center">●</div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
+                    <div className="p-3 bg-blue-100 rounded-lg text-center font-medium">
+                      <div className="text-xs text-gray-600">Semana 2</div>
+                      <div className="text-sm font-semibold">Días 8-14</div>
                     </div>
-                    
-                    {/* Testing y Validación */}
-                    <div className="grid grid-cols-8 gap-2 text-sm">
-                      <div className="col-span-2 p-3 bg-gray-50 rounded font-medium">Testing y Validación</div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-purple-500 rounded text-white text-center">●</div>
-                      <div className="p-3 bg-purple-500 rounded text-white text-center">●</div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
+                    <div className="p-3 bg-blue-100 rounded-lg text-center font-medium">
+                      <div className="text-xs text-gray-600">Semana 3</div>
+                      <div className="text-sm font-semibold">Días 15-21</div>
                     </div>
-                    
-                    {/* Producción */}
-                    <div className="grid grid-cols-8 gap-2 text-sm">
-                      <div className="col-span-2 p-3 bg-gray-50 rounded font-medium">Producción</div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-gray-100 rounded"></div>
-                      <div className="p-3 bg-red-500 rounded text-white text-center">●</div>
-                      <div className="p-3 bg-red-500 rounded text-white text-center">●</div>
+                    <div className="p-3 bg-blue-100 rounded-lg text-center font-medium">
+                      <div className="text-xs text-gray-600">Semana 4</div>
+                      <div className="text-sm font-semibold">Días 22-28</div>
+                    </div>
+                    <div className="p-3 bg-blue-100 rounded-lg text-center font-medium">
+                      <div className="text-xs text-gray-600">Semana 5</div>
+                      <div className="text-sm font-semibold">Días 29-35</div>
+                    </div>
+                    <div className="p-3 bg-blue-100 rounded-lg text-center font-medium">
+                      <div className="text-xs text-gray-600">Semana 6</div>
+                      <div className="text-sm font-semibold">Días 36-42</div>
+                    </div>
+                    <div className="p-3 bg-gray-100 rounded-lg text-center font-medium text-xs">
+                      Responsable
                     </div>
                   </div>
                   
-                  {/* Leyenda */}
-                  <div className="mt-6 flex flex-wrap gap-4 text-sm">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-blue-500 rounded"></div>
-                      <span>Investigación</span>
+                  {/* Actividades detalladas */}
+                  <div className="space-y-3">
+                    {/* Fase 1: Investigación */}
+                    <div className="grid grid-cols-9 gap-2 items-center">
+                      <div className="col-span-2 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                        <div className="font-semibold text-gray-900">1. Investigación de Mercado</div>
+                        <div className="text-sm text-gray-600">Análisis de competencia y tendencias</div>
+                      </div>
+                      <div className="p-3 bg-blue-500 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-3 bg-blue-400 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-2 bg-blue-100 rounded text-xs text-center">Duarte M.</div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-green-500 rounded"></div>
-                      <span>Diseño</span>
+
+                    {/* Fase 2: Diseño */}
+                    <div className="grid grid-cols-9 gap-2 items-center">
+                      <div className="col-span-2 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                        <div className="font-semibold text-gray-900">2. Diseño Conceptual</div>
+                        <div className="text-sm text-gray-600">Creación de mockups y arte final</div>
+                      </div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-green-500 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-3 bg-green-400 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-2 bg-green-100 rounded text-xs text-center">Angelo M.</div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-yellow-500 rounded"></div>
-                      <span>Desarrollo</span>
+
+                    {/* Fase 3: Prototipado */}
+                    <div className="grid grid-cols-9 gap-2 items-center">
+                      <div className="col-span-2 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                        <div className="font-semibold text-gray-900">3. Prototipado y Muestras</div>
+                        <div className="text-sm text-gray-600">Desarrollo de prototipos físicos</div>
+                      </div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-yellow-500 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-3 bg-yellow-400 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-2 bg-yellow-100 rounded text-xs text-center">Proveedor</div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-purple-500 rounded"></div>
-                      <span>Testing</span>
+
+                    {/* Fase 4: Testing */}
+                    <div className="grid grid-cols-9 gap-2 items-center">
+                      <div className="col-span-2 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
+                        <div className="font-semibold text-gray-900">4. Testing y Validación</div>
+                        <div className="text-sm text-gray-600">Pruebas con comunidad objetivo</div>
+                      </div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-purple-500 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-3 bg-purple-400 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-2 bg-purple-100 rounded text-xs text-center">Manuel P.</div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-red-500 rounded"></div>
-                      <span>Producción</span>
+
+                    {/* Fase 5: Producción */}
+                    <div className="grid grid-cols-9 gap-2 items-center">
+                      <div className="col-span-2 p-4 bg-red-50 rounded-lg border-l-4 border-red-500">
+                        <div className="font-semibold text-gray-900">5. Producción Masiva</div>
+                        <div className="text-sm text-gray-600">Fabricación de lote inicial (100 unidades)</div>
+                      </div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-red-500 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-3 bg-red-400 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-2 bg-red-100 rounded text-xs text-center">Fábrica</div>
+                    </div>
+
+                    {/* Fase 6: Marketing */}
+                    <div className="grid grid-cols-9 gap-2 items-center">
+                      <div className="col-span-2 p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-500">
+                        <div className="font-semibold text-gray-900">6. Campaña de Marketing</div>
+                        <div className="text-sm text-gray-600">Lanzamiento en redes sociales</div>
+                      </div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-gray-100 rounded-lg"></div>
+                      <div className="p-3 bg-indigo-300 rounded-lg text-white text-center">○</div>
+                      <div className="p-3 bg-indigo-500 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-3 bg-indigo-400 rounded-lg text-white text-center font-bold">█</div>
+                      <div className="p-2 bg-indigo-100 rounded text-xs text-center">Manuel P.</div>
+                    </div>
+                  </div>
+                  
+                  {/* Leyenda mejorada */}
+                  <div className="mt-8 p-6 bg-gray-50 rounded-lg">
+                    <h5 className="font-semibold text-gray-900 mb-4">Leyenda del Diagrama</h5>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-6 h-4 bg-blue-500 rounded font-bold text-white text-center text-xs">█</div>
+                          <span className="text-sm"><strong>Actividad Principal:</strong> Trabajo intensivo</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="w-6 h-4 bg-blue-300 rounded font-bold text-white text-center text-xs">█</div>
+                          <span className="text-sm"><strong>Actividad Secundaria:</strong> Seguimiento/Ajustes</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="w-6 h-4 bg-indigo-300 rounded text-white text-center text-xs">○</div>
+                          <span className="text-sm"><strong>Preparación:</strong> Actividad preparatoria</span>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="text-sm">
+                          <strong>Hitos Críticos:</strong>
+                          <ul className="mt-2 space-y-1 text-gray-600">
+                            <li>• Semana 2: Diseño aprobado</li>
+                            <li>• Semana 4: Prototipo validado</li>
+                            <li>• Semana 6: Producto listo para venta</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Análisis de riesgos */}
+                  <div className="mt-6 p-6 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
+                      <svg className="w-5 h-5 text-yellow-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                      </svg>
+                      Riesgos Identificados
+                    </h5>
+                    <div className="grid md:grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <strong>Riesgo Alto:</strong> Retrasos en proveedor de telas (Semana 3-4)
+                      </div>
+                      <div>
+                        <strong>Riesgo Medio:</strong> Feedback negativo en testing (Semana 4-5)
+                      </div>
                     </div>
                   </div>
                 </div>
