@@ -807,67 +807,214 @@ Plan de Desarrollo */}
           <div className="mb-12">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">2.8. Manual de Funciones y Descripción de Puestos</h3>
             
-            <div className="space-y-6">
-              {/* Gerente General */}
-              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                <h4 className="text-xl font-semibold text-blue-900 mb-3">GERENTE GENERAL</h4>
-                <div className="grid md:grid-cols-2 gap-4 text-blue-800">
-                  <div>
-                    <p><strong>Titular:</strong> Duarte Mauricio</p>
-                    <p><strong>Reporta a:</strong> N/A (Socio Fundador)</p>
-                    <p><strong>Supervisa:</strong> Gerente Comercial, Gerente Creativo</p>
+            <div className="bg-gray-50 p-6 rounded-lg mb-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Organización HackLayer</h4>
+              <p className="text-gray-700">
+                Este documento detalla las responsabilidades, jerarquías y funciones de los puestos clave 
+                dentro de la estructura organizacional de Hacklayer.
+              </p>
+            </div>
+            
+            <div className="space-y-8">
+              {/* 1. Gerente General */}
+              <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-500">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
                   </div>
-                  <div>
-                    <p><strong>Función Principal:</strong> Definir y liderar la estrategia general de Hacklayer</p>
-                    <p><strong>Nivel:</strong> 80% Estratégico, 20% Táctico</p>
+                  <h4 className="text-2xl font-semibold text-gray-900">1. PUESTO: GERENTE GENERAL</h4>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-3">
+                    <div><strong className="text-gray-900">Titular del Puesto:</strong> <span className="text-gray-700">Duarte Mauricio</span></div>
+                    <div><strong className="text-gray-900">Reporta a:</strong> <span className="text-gray-700">N/A (Socio Fundador / Propietario)</span></div>
+                    <div><strong className="text-gray-900">Supervisa a:</strong> <span className="text-gray-700">Gerente Comercial</span></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div><strong className="text-gray-900">Función Principal:</strong> <span className="text-gray-700">Definir y liderar la estrategia general de Hacklayer, asegurando el crecimiento, la rentabilidad y el cumplimiento de la Misión y Visión de la empresa.</span></div>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <h5 className="font-semibold text-gray-900 mb-3">Nivel Organizacional (Desglose):</h5>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <div className="font-semibold text-blue-900">Nivel Estratégico (80%)</div>
+                      <div className="text-sm text-blue-800 mt-2">Define el "QUÉ" y el "POR QUÉ" a largo plazo</div>
+                    </div>
+                    <div className="bg-green-50 p-4 rounded-lg">
+                      <div className="font-semibold text-green-900">Nivel Táctico (20%)</div>
+                      <div className="text-sm text-green-800 mt-2">Define el "CÓMO" se implementará la estrategia</div>
+                    </div>
+                    <div className="bg-gray-100 p-4 rounded-lg">
+                      <div className="font-semibold text-gray-900">Nivel Operacional (0%)</div>
+                      <div className="text-sm text-gray-700 mt-2">Delega toda la operación en las gerencias</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h5 className="font-semibold text-gray-900 mb-3">Funciones Específicas:</h5>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Definir el rumbo estratégico y los objetivos organizacionales (OKRs)</span>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Aprobar el presupuesto anual y supervisar la salud financiera</span>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Supervisar y evaluar el desempeño de la Gerencia Comercial</span>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Representar legal y comercialmente a Hacklayer</span>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Liderar la cultura de la empresa</span>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Asegurar alineación con los valores de la marca</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Gerente Comercial */}
-              <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-                <h4 className="text-xl font-semibold text-green-900 mb-3">GERENTE COMERCIAL Y DE OPERACIONES</h4>
-                <div className="grid md:grid-cols-2 gap-4 text-green-800">
-                  <div>
-                    <p><strong>Titular:</strong> Duarte Mauricio</p>
-                    <p><strong>Reporta a:</strong> Gerente General</p>
-                    <p><strong>Áreas:</strong> Finanzas, Operaciones, Ventas</p>
+              {/* 2. Gerente Comercial, Operaciones y Creatividad */}
+              <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-purple-500">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H3m2 0h4M9 7h6m-6 4h6m-6 4h6" />
+                    </svg>
                   </div>
-                  <div>
-                    <p><strong>Función Principal:</strong> Dirigir operaciones de ventas, logística y finanzas</p>
-                    <p><strong>Nivel:</strong> Táctico y Operacional</p>
+                  <h4 className="text-2xl font-semibold text-gray-900">2. PUESTO: GERENTE COMERCIAL, DE OPERACIONES Y CREATIVIDAD</h4>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-3">
+                    <div><strong className="text-gray-900">Titular del Puesto:</strong> <span className="text-gray-700">Angelo Motta</span></div>
+                    <div><strong className="text-gray-900">Reporta a:</strong> <span className="text-gray-700">Gerente General</span></div>
+                    <div><strong className="text-gray-900">Supervisa a:</strong> <span className="text-gray-700">Community Manager (Manuel Pérez)</span></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div><strong className="text-gray-900">Función Principal:</strong> <span className="text-gray-700">Dirigir todas las operaciones de ventas, logística, finanzas, identidad visual, diseño de productos y estrategia de marketing, asegurando que Hacklayer sea la marca más auténtica del nicho.</span></div>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <h5 className="font-semibold text-gray-900 mb-4">Funciones Específicas (Nivel Táctico y Operacional):</h5>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                      <div className="bg-purple-50 p-4 rounded-lg">
+                        <h6 className="font-semibold text-purple-900 mb-2">Producto y Diseño:</h6>
+                        <div className="space-y-1 text-sm text-purple-800">
+                          <div>• Supervisar y aprobar todos los diseños</div>
+                          <div>• Realizar control de calidad de producción</div>
+                          <div>• Gestionar proveedores de producción</div>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-green-50 p-4 rounded-lg">
+                        <h6 className="font-semibold text-green-900 mb-2">Marketing y Comunidad:</h6>
+                        <div className="space-y-1 text-sm text-green-800">
+                          <div>• Definir la estrategia de contenido</div>
+                          <div>• Supervisar y evaluar al Community Manager</div>
+                          <div>• Aprobar presupuesto de marketing</div>
+                          <div>• Gestionar alianzas creativas</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="bg-blue-50 p-4 rounded-lg">
+                        <h6 className="font-semibold text-blue-900 mb-2">Finanzas:</h6>
+                        <div className="space-y-1 text-sm text-blue-800">
+                          <div>• Gestionar el flujo de caja</div>
+                          <div>• Pagos a proveedores y registros contables en el SIA</div>
+                          <div>• Definir la estrategia de precios</div>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-yellow-50 p-4 rounded-lg">
+                        <h6 className="font-semibold text-yellow-900 mb-2">Operaciones y Ventas:</h6>
+                        <div className="space-y-1 text-sm text-yellow-800">
+                          <div>• Optimizar la cadena logística</div>
+                          <div>• Supervisar proceso de ventas y atención al cliente</div>
+                          <div>• Liderar la prospección B2B</div>
+                          <div>• Reportar métricas de ventas</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Gerente Creativo */}
-              <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
-                <h4 className="text-xl font-semibold text-purple-900 mb-3">GERENTE CREATIVO Y DE PRODUCTO</h4>
-                <div className="grid md:grid-cols-2 gap-4 text-purple-800">
-                  <div>
-                    <p><strong>Titular:</strong> Angelo Motta</p>
-                    <p><strong>Reporta a:</strong> Gerente General</p>
-                    <p><strong>Supervisa:</strong> Community Manager</p>
+              {/* 3. Community Manager */}
+              <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-orange-500">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                    </svg>
                   </div>
-                  <div>
-                    <p><strong>Función Principal:</strong> Liderar identidad visual, diseño y marketing</p>
-                    <p><strong>Áreas:</strong> Producto, Diseño, Marketing</p>
+                  <h4 className="text-2xl font-semibold text-gray-900">3. PUESTO: COMMUNITY MANAGER</h4>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-3">
+                    <div><strong className="text-gray-900">Titular del Puesto:</strong> <span className="text-gray-700">Manuel Pérez</span></div>
+                    <div><strong className="text-gray-900">Reporta a:</strong> <span className="text-gray-700">Gerente Comercial, de Operaciones y Creatividad (Angelo Motta)</span></div>
+                    <div><strong className="text-gray-900">Supervisa a:</strong> <span className="text-gray-700">N/A</span></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div><strong className="text-gray-900">Función Principal:</strong> <span className="text-gray-700">Ejecutar la estrategia de redes sociales, gestionando la comunidad e interactuando con los seguidores para construir una base de fans leal, activa y comprometida.</span></div>
                   </div>
                 </div>
-              </div>
 
-              {/* Community Manager */}
-              <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
-                <h4 className="text-xl font-semibold text-yellow-900 mb-3">COMMUNITY MANAGER</h4>
-                <div className="grid md:grid-cols-2 gap-4 text-yellow-800">
-                  <div>
-                    <p><strong>Titular:</strong> Manuel Pérez</p>
-                    <p><strong>Reporta a:</strong> Gerente Creativo</p>
-                    <p><strong>Supervisa:</strong> N/A</p>
-                  </div>
-                  <div>
-                    <p><strong>Función Principal:</strong> Ejecutar estrategia de redes sociales</p>
-                    <p><strong>Nivel:</strong> Operacional</p>
+                <div>
+                  <h5 className="font-semibold text-gray-900 mb-4">Funciones Específicas (Nivel Operacional):</h5>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Monitorear y moderar activamente las plataformas sociales (Instagram, Twitter)</span>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Publicar el contenido según el calendario aprobado</span>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Responder a comentarios y menciones en el tono de voz de la marca</span>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Interactuar proactivamente con los seguidores</span>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Identificar y reportar tendencias y oportunidades de contenido</span>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Elaborar reporte semanal de métricas (crecimiento, engagement)</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -882,7 +1029,7 @@ Plan de Desarrollo */}
                 Proceso: Gestión de Pedidos y Envíos (PRE-E-COMMERCE)
               </h4>
               <p className="text-gray-700 mb-4">
-                <strong>Responsable:</strong> Gerencia Comercial y de Operaciones (Duarte Mauricio)
+                <strong>Responsable:</strong> Gerencia Comercial, de Operaciones y Creatividad (Angelo Motta)
               </p>
               
               <div className="space-y-4">
